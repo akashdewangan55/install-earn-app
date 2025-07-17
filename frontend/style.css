@@ -1,0 +1,33 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #f1f5f9;
+  text-align: center;
+  padding: 20px;
+}
+.wallet {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+.app-list {
+  margin-top: 20px;
+}
+.app-card {
+  background: #334155;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+}
+button {
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #0ea5e9;
+  color: white;
+  cursor: pointer;
+}
+button:disabled {
+  background: #64748b;
+}
