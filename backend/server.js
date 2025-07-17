@@ -29,9 +29,7 @@ const AppSchema = new mongoose.Schema({
 const App = mongoose.model('App', AppSchema);
 
 // API Routes
-
-// Get all apps
-app.get(API_URL + "/apps", async (req, res) => {
+app.get('/api/apps', async (req, res) => {
     try {
         const apps = await App.find();
         res.json(apps);
@@ -40,8 +38,7 @@ app.get(API_URL + "/apps", async (req, res) => {
     }
 });
 
-// Add new app
-app.post(API_URL + "/apps", async (req, res) => {
+app.post('/api/apps', async (req, res) => {
     const { name, description, bonus, icon, link } = req.body;
     try {
         const newApp = new App({ name, description, bonus, icon, link });
@@ -52,8 +49,7 @@ app.post(API_URL + "/apps", async (req, res) => {
     }
 });
 
-// Edit app
-app.put(API_URL + "/apps/:id", async (req, res) => {
+app.put('/api/apps/:id', async (req, res) => {
     const { name, description, bonus, icon, link } = req.body;
     try {
         await App.findByIdAndUpdate(req.params.id, { name, description, bonus, icon, link });
@@ -63,8 +59,7 @@ app.put(API_URL + "/apps/:id", async (req, res) => {
     }
 });
 
-// Delete app
-app.delete(API_URL + "/apps/:id", async (req, res) => {
+app.delete('/api/apps/:id', async (req, res) => {
     try {
         await App.findByIdAndDelete(req.params.id);
         res.json({ message: "App deleted successfully" });
